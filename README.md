@@ -1,3 +1,4 @@
 # tmuxConfig
 tmuxの設定ファイル<br>
-tmux -f <設定ファイル>で読み込めるはず
+コマンドは以下<br>
+tmux -f <設定ファイル> new -s <SessionName>
