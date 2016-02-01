@@ -1,0 +1,10 @@
+function tmua() {
+    local tmuxSessionName="suzunone-session"
+    tmux a -t "${tmuxSessionName}"
+    local res="`echo $?`"
+    [ "$res" -eq 0 ] && return 0
+    tmux -f ~/work/git/tmuxConfig/tmux.conf new -s ${tmuxSessionName} -d
+    tmux rename-window -t bash ${tmuxSessionName}
+    tmux send-keys -t ${tmuxSessionName} 'source /opt/owm/work/yishii/.util ; sleep 1 ; clear' C-m
+    tmux a -t ${tmuxSessionName}
+}
